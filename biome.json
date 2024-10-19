@@ -9,6 +9,7 @@
       "ignoreUnknown": false,
       "ignore": []
    },
+
    "formatter": {
       "enabled": true,
       "indentStyle": "space",
@@ -22,13 +23,23 @@
    },
    "linter": {
       "enabled": true,
-
       "rules": {
-         "recommended": true
+         "recommended": true,
+         "correctness": {
+            "noUnusedImports": {
+               "level": "error",
+               "fix": "safe"
+            }
+         }
       }
    },
    "javascript": {
+      "linter": {
+         "enabled": true
+      },
+
       "formatter": {
+         "enabled": true,
          "quoteStyle": "double",
          "semicolons": "always"
       }

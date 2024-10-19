@@ -8,6 +8,10 @@ const config: Config = {
    ],
    theme: {
       extend: {
+         fontFamily: {
+            roboto: ["var(--font-roboto)"],
+            dancing: ["var(--font-dancing)"],
+         },
          colors: {
             background: "var(--background)",
             foreground: "var(--foreground)",

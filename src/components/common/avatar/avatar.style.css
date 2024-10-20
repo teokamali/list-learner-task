@@ -1,0 +1,3 @@
+.avatar {
+   @apply flex-shrink-0 rounded-full;
+}

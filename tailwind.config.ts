@@ -13,8 +13,8 @@ const config: Config = {
             dancing: ["var(--font-dancing)"],
          },
          colors: {
-            background: "var(--background)",
-            foreground: "var(--foreground)",
+            primary: "#276AEF",
+            background: "#252526",
          },
       },
    },

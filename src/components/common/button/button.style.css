@@ -1,0 +1,135 @@
+.btn {
+   @apply relative inline-flex items-center justify-center h-11 text-sm leading-[1] py-2.5 px-5 rounded-2xl font-bold transition disabled:opacity-40 disabled:pointer-events-none overflow-hidden;
+}
+
+.btn svg {
+   @apply fill-inherit flex-shrink-0;
+}
+
+/* Primary Buttons */
+.btn-primary {
+   @apply btn bg-primary text-white fill-white hover:bg-primary/90;
+}
+
+.btn-primary.btn-bordered {
+   @apply shadow-[0_0_0_1px_rgba(0,115,14,0.5)];
+}
+
+.btn-secondary {
+   @apply btn bg-secondary text-white fill-white hover:bg-secondary/90;
+}
+
+.btn-secondary.btn-bordered {
+   @apply shadow-[0_0_0_1px_rgba(17,24,32,0.5)];
+}
+
+.btn-success {
+   @apply btn bg-success text-white fill-white hover:bg-success/90;
+}
+
+.btn-success.btn-bordered {
+   @apply shadow-[0_0_0_1px_rgba(26,169,253,0.5)];
+}
+
+.btn-info {
+   @apply btn bg-info text-white fill-white hover:bg-info/90;
+}
+
+.btn-info.btn-bordered {
+   @apply shadow-[0_0_0_1px_rgba(71,87,102,0.5)];
+}
+
+.btn-danger {
+   @apply btn bg-danger text-white fill-white hover:bg-danger/90;
+}
+
+.btn-danger.btn-bordered {
+   @apply shadow-[0_0_0_1px_rgba(255,59,48,0.5)];
+}
+
+.btn-warning {
+   @apply btn bg-warning text-white fill-white hover:bg-warning/90;
+}
+
+.btn-warning.btn-bordered {
+   @apply shadow-[0_0_0_1px_rgba(231,170,46,0.5)];
+}
+
+.btn-dark {
+   @apply btn bg-dark text-white fill-white hover:bg-dark/80 active:bg-dark/80 focus:bg-dark/80;
+}
+
+.btn-dark.btn-bordered {
+   @apply shadow-[0_0_0_1px_#1e1a25];
+}
+
+.btn-white {
+   @apply btn bg-white text-dark fill-dark hover:bg-white/90;
+}
+
+.btn-white.btn-bordered {
+   @apply shadow-[0_0_0_1px_rgba(254,254,254,0.5)];
+}
+
+.btn-light {
+   @apply btn bg-light text-white fill-white hover:bg-light/20;
+}
+
+.btn-light.btn-bordered {
+   @apply shadow-[0_0_0_1px_rgba(254,254,254,0.2)];
+}
+
+/* Primary Buttons */
+.btn-gradient-primary {
+   @apply btn bg-gradient-primary text-white hover:opacity-90;
+}
+
+.btn-gradient-primary.btn-bordered {
+   @apply shadow-[0_0_0_1px_rgba(0,115,14,0.5)];
+}
+
+.btn-gradient-yellow-dark {
+   @apply btn bg-gradient-yellow-dark text-white hover:opacity-90;
+}
+
+.btn-gradient-yellow-dark.btn-bordered {
+   @apply shadow-[0_0_0_1px_#3B3D47];
+}
+
+.btn-pattern-glitch {
+   @apply btn text-white fill-white relative;
+}
+
+.btn-pattern-glitch:before {
+   content: "";
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   background-image: url("/assets/images/glitch.png");
+   background-repeat: no-repeat;
+   background-size: cover;
+   opacity: 0.3;
+   transition: all 300ms ease-in-out;
+}
+.btn-pattern-glitch:hover:before {
+   opacity: 0.1;
+}
+
+.btn-pattern-glitch.btn-bordered {
+   @apply shadow-[0_0_0_1px_#3b3d47cf];
+}
+
+.btn-sm {
+   @apply text-xs py-2 px-4 h-9;
+}
+
+.btn-lg {
+   @apply py-4 px-4 rounded-2xl h-14;
+}
+
+.btn-medium svg,
+.btn-small svg {
+   @apply w-5 h-5;
+}

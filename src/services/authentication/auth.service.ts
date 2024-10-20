@@ -1,7 +1,7 @@
 // Import necessary RTK Query methods
 import type { BaseResponse } from "@/services/base/request-interface";
 import { getApiRoute } from "@/services/base/routes";
-import { setToken } from "@/store/slices/auth/auth.slice";
+import { setToken, setUser } from "@/store/slices/auth/auth.slice";
 import { createApi } from "@reduxjs/toolkit/query/react";
 import { toast } from "react-toastify";
 import axiosBaseQuery from "../base/axiosBaseQuery";
@@ -12,7 +12,7 @@ export const AuthService = createApi({
    reducerPath: "authService", // Specify the reducer path
    baseQuery: axiosBaseQuery(), // Replace with your actual base URL
    endpoints: (builder) => ({
-      getAuth: builder.mutation<BaseResponse<ILoginResponse>, ILoginPayload>({
+      login: builder.mutation<BaseResponse<ILoginResponse>, ILoginPayload>({
          query: (params) => {
             const { auth } = getApiRoute(); // Use your existing function to get the route
             return {
@@ -24,7 +24,16 @@ export const AuthService = createApi({
          },
          async onQueryStarted(arg, { dispatch, queryFulfilled }) {
             const { data } = await queryFulfilled;
-            dispatch(setToken(data.data.token));
+            const user = data;
+            dispatch(setToken(user.accessToken));
+            dispatch(
+               setUser({
+                  avatar: user.image,
+                  email: user.email,
+                  id: user.id,
+                  name: `${user.firstName} ${user.lastName}`,
+               }),
+            );
             toast.success("Logged in Successfully");
          },
       }),
@@ -32,4 +41,4 @@ export const AuthService = createApi({
 });
 
 // Export the auto-generated hook for the `getNonce` query
-export const { useGetAuthMutation } = AuthService;
+export const { useLoginMutation } = AuthService;

@@ -4,7 +4,8 @@ import { FormGroup } from "@/components/common/form/formGroup/fromGroup";
 import { Label } from "@/components/common/form/label/label";
 import { TextForm } from "@/components/common/form/textForm/textForm";
 import { Input } from "@/components/common/form/textInput/textInput";
-import { setToken, setUser } from "@/store/slices/auth/auth.slice";
+import { Spinner } from "@/components/common/spinner/spinner";
+import { useLoginMutation } from "@/services/authentication/auth.service";
 import { useAppDispatch } from "@/store/store";
 import { IconPasswordFingerprint, IconUser } from "@tabler/icons-react";
 import Link from "next/link";
@@ -17,6 +18,7 @@ const LoginForm = () => {
    const dispatch = useAppDispatch();
    const router = useRouter();
    const searchparams = useSearchParams();
+   const [loginMutate, { isLoading }] = useLoginMutation();
    const {
       handleSubmit,
       control,
@@ -24,17 +26,15 @@ const LoginForm = () => {
    } = useForm<ILoginForm>({ defaultValues: { confirm: false, username: "emilys", password: "emilyspass" } });
 
    const onSubmit = (values: ILoginForm) => {
-      dispatch(setUser({ email: "Test@gmail.com", avatar: "", id: 1, name: "Test Name" }));
-      dispatch(
-         setToken(
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
-         ),
-      );
-      const callbackURL = searchparams.get("callback_url");
-      if (callbackURL) {
-         router.push(callbackURL);
-      }
-      router.push("/");
+      loginMutate({ password: values.password, username: values.username })
+         .unwrap()
+         .then((res) => {
+            const callbackURL = searchparams.get("callback_url");
+            if (callbackURL) {
+               router.push(callbackURL);
+            }
+            router.push("/");
+         });
    };
 
    return (
@@ -142,8 +142,10 @@ const LoginForm = () => {
                full
                variant="primary"
                type="submit"
+               disabled={isLoading}
             >
                Login
+               {isLoading ? <Spinner size="sm" /> : ""}
             </Button>
          </form>
       </div>

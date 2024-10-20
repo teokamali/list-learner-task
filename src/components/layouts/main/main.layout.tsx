@@ -5,7 +5,7 @@ const MainLayout: BaseProps = ({ children }) => {
    return (
       <div className="bg-background flex h-screen">
          {/* Sidebar */}
-         <aside className="text-white bg-black w-1/5">
+         <aside className="text-white bg-black w-[23%]">
             <Sidebar />
          </aside>
 

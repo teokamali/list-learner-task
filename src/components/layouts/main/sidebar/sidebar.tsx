@@ -15,19 +15,21 @@ const Sidebar = () => {
          {/* First Part */}
          <div className="bg-background p-1">
             {user ? (
-               <div className="flex items-center gap-2 py-6 px-3">
+               <div className="flex items-center gap-2 py-4 px-3">
                   <Avatar
                      size="lg"
                      alt={user.name}
                      src={user.avatar}
                   />
-                  <h4 className="text-lg font-semibold">{user.name}</h4>
+                  <h4 className="text-base font-semibold">{user.name}</h4>
                </div>
             ) : (
                <></>
             )}
-            <hr className="mt-2" />
-            <ul className="flex flex-col gap-2 mt-2 py-2">
+            <div className="px-1 mt-1">
+               <hr className="" />
+            </div>
+            <ul className="flex flex-col gap-2 mt-2 py-2 pt-0">
                {sidebarRoutes.map((item) => {
                   const isActive = item.slug === pathname;
                   if (item.disabled) {

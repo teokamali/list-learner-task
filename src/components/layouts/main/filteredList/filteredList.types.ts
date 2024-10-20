@@ -4,5 +4,5 @@ export interface ListItem {
    title: string;
    subtitle: string;
    slug: string;
-   category: "podcast" | "book";
+   category: "podcasts" | "books";
 }

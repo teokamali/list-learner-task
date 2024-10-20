@@ -12,7 +12,7 @@ const items: ListItem[] = [
       title: "The Joe Rogan Experience",
       subtitle: "Joe Rogan",
       slug: "joe-rogan",
-      category: "podcast",
+      category: "podcasts",
    },
    {
       id: 2,
@@ -20,14 +20,14 @@ const items: ListItem[] = [
       title: "Past Weekend",
       subtitle: "Theo Von",
       slug: "Theo-Von",
-      category: "podcast",
+      category: "podcasts",
    },
    {
       id: 3,
       image: "https://picsum.photos/150?random=3",
       title: "I Am Not Your Perfect Mexican Daughter",
       subtitle: "Erika L. Sanchez",
-      category: "book",
+      category: "books",
       slug: "Erika-L-Sanchez",
    },
    {
@@ -35,13 +35,13 @@ const items: ListItem[] = [
       image: "https://picsum.photos/150?random=4",
       title: "Girl In The Blue Coat",
       subtitle: "Monica Hesse",
-      category: "book",
+      category: "books",
       slug: "Monica-Hesse",
    },
 ];
 
 const FilteredList: React.FC = () => {
-   const [filter, setFilter] = useState<"all" | "podcast" | "book">("all");
+   const [filter, setFilter] = useState<"all" | "podcasts" | "books">("all");
 
    const filteredItems = items.filter((item) => (filter === "all" ? true : item.category === filter));
 
@@ -60,10 +60,10 @@ const FilteredList: React.FC = () => {
             </Button>
             <Button
                size="sm"
-               variant={filter === "podcast" ? "primary" : "light"}
+               variant={filter === "podcasts" ? "primary" : "light"}
                kind="primary"
                className={"px-3 py-2"}
-               onClick={() => setFilter("podcast")}
+               onClick={() => setFilter("podcasts")}
             >
                Podcast
             </Button>
@@ -71,8 +71,8 @@ const FilteredList: React.FC = () => {
                size="sm"
                kind="primary"
                className={"px-3 py-2"}
-               variant={filter === "book" ? "primary" : "light"}
-               onClick={() => setFilter("book")}
+               variant={filter === "books" ? "primary" : "light"}
+               onClick={() => setFilter("books")}
             >
                Books
             </Button>

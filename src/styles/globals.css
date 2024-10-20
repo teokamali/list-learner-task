@@ -1,3 +1,13 @@
+@import url('../components/common/button/button.style.css');
+@import url('../components/common/spinner/spinner.style.css');
+@import url('../components/common/avatar/avatar.style.css');
+@import url('../components/common/container/container.style.css');
+@import url('../components/common/form/checkbox/checkbox.style.css');
+@import url('../components/common/form/inputIcon/inputIcon.style.css');
+@import url('../components/common/form/label/label.style.css');
+@import url('../components/common/form/textInput/textInput.style.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+

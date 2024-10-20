@@ -1,0 +1,16 @@
+.form-control-icon {
+  @apply relative;
+}
+
+.form-control-icon .form-control {
+  @apply pl-14;
+}
+
+.form-control-icon .form-control-numeric {
+  @apply pl-14;
+}
+
+.form-control-icon svg:not(.numeric-arrow) {
+  @apply absolute top-1/2 left-6;
+  transform: translateY(-50%);
+}

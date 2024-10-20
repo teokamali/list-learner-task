@@ -1,9 +1,6 @@
 import { ElementProps, UiSizes, UiVariants } from "@/types/elements.types";
 import { ButtonHTMLAttributes } from "react";
 
-export type ButtonGradientVariants = "primary" | "yellow-dark";
-export type ButtonPatternVariants = "glitch";
-
 // Components
 export type ButtonBase = {
    size?: UiSizes;
@@ -17,17 +14,12 @@ export type ButtonPrimary = {
    variant?: UiVariants;
 };
 
-export type ButtonGradient = {
-   kind: "gradient";
-   variant?: ButtonGradientVariants;
+export type ButtonOutlined = {
+   kind: "outlined";
+   variant?: UiVariants;
 };
 
-export type ButtonGlitch = {
-   kind: "pattern";
-   variant?: ButtonPatternVariants;
-};
-
-export type UIButton = ButtonPrimary | ButtonGradient | ButtonGlitch;
+export type UIButton = ButtonPrimary | ButtonOutlined;
 
 export type ButtonProps = ButtonBase & UIButton & ButtonHTMLAttributes<HTMLButtonElement>;
 export type ButtonHook = ElementProps & ButtonProps;

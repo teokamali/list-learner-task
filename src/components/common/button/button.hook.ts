@@ -1,15 +1,12 @@
 import { useEnhancedProps } from "@/hooks/useBaseComponent/useBaseComponent.hook";
 import { UiSizes, UiVariants } from "@/types/elements.types";
 import classNames from "classnames";
-import { ButtonGradientVariants, ButtonHook, ButtonPatternVariants, UIButton } from "./button.types";
+import { ButtonHook, UIButton } from "./button.types";
 
 export const useButtonHook = (baseClass: string, btnProps: ButtonHook) => {
    const { variant, size, className, pilled, disabled, onClick, full, kind, bordered, ...restAttrs } = btnProps;
 
-   const getVariant = ({
-      kind,
-      variant,
-   }: { kind: UIButton["kind"]; variant?: UiVariants | ButtonGradientVariants | ButtonPatternVariants }) => {
+   const getVariant = ({ kind, variant }: { kind: UIButton["kind"]; variant?: UiVariants }) => {
       let btnClass = "";
 
       switch (kind) {
@@ -18,13 +15,8 @@ export const useButtonHook = (baseClass: string, btnProps: ButtonHook) => {
             btnClass += `${defaultVariant}`;
             break;
          }
-         case "gradient": {
+         case "outlined": {
             const defaultVariant = variant ?? "primary";
-            btnClass += `${kind}-${defaultVariant}`;
-            break;
-         }
-         case "pattern": {
-            const defaultVariant = variant ?? "glitch";
             btnClass += `${kind}-${defaultVariant}`;
             break;
          }

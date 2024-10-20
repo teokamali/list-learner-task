@@ -1,0 +1,11 @@
+.form-control {
+  @apply w-full border rounded-2xl outline-none transition-colors py-[8px] px-3 placeholder:text-main/50 focus:border-main;
+}
+
+.form-control:disabled {
+  @apply opacity-70 cursor-not-allowed;
+}
+
+.form-control:disabled ~ svg {
+  @apply opacity-70 cursor-not-allowed;
+}

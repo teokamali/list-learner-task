@@ -1,4 +1,5 @@
 import { Button } from "@/components/common/button/button";
+import { usePermalink } from "@/hooks/usePermalinks/usePermalink.hook";
 import { IconArrowRight } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -42,7 +43,7 @@ const items: ListItem[] = [
 
 const FilteredList: React.FC = () => {
    const [filter, setFilter] = useState<"all" | "podcasts" | "books">("all");
-
+   const { internalLinks } = usePermalink();
    const filteredItems = items.filter((item) => (filter === "all" ? true : item.category === filter));
 
    return (
@@ -83,7 +84,7 @@ const FilteredList: React.FC = () => {
             {filteredItems.map((item) => (
                <li key={item.id}>
                   <Link
-                     href={`${item.category}/${item.slug}`}
+                     href={internalLinks[item.category].get(item.slug)}
                      className="flex items-center justify-between text-white rounded-lg shadow hover:bg-white/5 px-3 py-2 transition-colors duration-200"
                   >
                      <div className="flex items-center gap-2">

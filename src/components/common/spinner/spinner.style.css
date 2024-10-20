@@ -1,99 +1,99 @@
 .spinner-border {
-  --spinner-width: 1.75rem;
-  --spinner-height: 1.75rem;
-  --spinner-vertical-align: -0.125em;
-  --spinner-border-width: 0.25em;
-  --spinner-animation-speed: 0.75s;
-  --spinner-animation-name: spinner-border;
-  border: var(--spinner-border-width) solid currentcolor;
-  border-right-color: transparent;
+   --spinner-width: 1.75rem;
+   --spinner-height: 1.75rem;
+   --spinner-vertical-align: -0.125em;
+   --spinner-border-width: 0.25em;
+   --spinner-animation-speed: 0.75s;
+   --spinner-animation-name: spinner-border;
+   border: var(--spinner-border-width) solid currentcolor;
+   border-right-color: transparent;
 }
 
 .spinner-border,
 .spinner-grow {
-  display: inline-block;
-  width: var(--spinner-width);
-  height: var(--spinner-height);
-  vertical-align: var(--spinner-vertical-align);
-  border-radius: 50%;
-  -webkit-animation: var(--spinner-animation-speed) linear infinite var(--spinner-animation-name);
-  animation: var(--spinner-animation-speed) linear infinite var(--spinner-animation-name);
+   display: inline-block;
+   width: var(--spinner-width);
+   height: var(--spinner-height);
+   vertical-align: var(--spinner-vertical-align);
+   border-radius: 50%;
+   -webkit-animation: var(--spinner-animation-speed) linear infinite var(--spinner-animation-name);
+   animation: var(--spinner-animation-speed) linear infinite var(--spinner-animation-name);
 }
 
 @-webkit-keyframes spinner-border {
-  to {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+   to {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+   }
 }
 
 @keyframes spinner-border {
-  to {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+   to {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+   }
 }
 
 .spinner-border-sm {
-  --spinner-width: 1rem;
-  --spinner-height: 1rem;
-  --spinner-border-width: 0.2em;
+   --spinner-width: 1rem;
+   --spinner-height: 1rem;
+   --spinner-border-width: 0.2em;
 }
 
 @-webkit-keyframes spinner-grow {
-  0% {
-    -webkit-transform: scale(0);
-    transform: scale(0);
-  }
+   0% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+   }
 
-  50% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
+   50% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+   }
 }
 
 @keyframes spinner-grow {
-  0% {
-    -webkit-transform: scale(0);
-    transform: scale(0);
-  }
+   0% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+   }
 
-  50% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
+   50% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+   }
 }
 
 .spinner-grow {
-  --spinner-width: 1.75rem;
-  --spinner-height: 1.75rem;
-  --spinner-vertical-align: -0.125em;
-  --spinner-animation-speed: 0.75s;
-  --spinner-animation-name: spinner-grow;
-  background-color: currentcolor;
-  opacity: 0;
+   --spinner-width: 1.75rem;
+   --spinner-height: 1.75rem;
+   --spinner-vertical-align: -0.125em;
+   --spinner-animation-speed: 0.75s;
+   --spinner-animation-name: spinner-grow;
+   background-color: currentcolor;
+   opacity: 0;
 }
 
 .spinner-grow-sm {
-  --spinner-width: 0.75rem;
-  --spinner-height: 0.75rem;
+   --spinner-width: 0.75rem;
+   --spinner-height: 0.75rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .spinner-border,
-  .spinner-grow {
-    --spinner-animation-speed: 1.5s;
-  }
+   .spinner-border,
+   .spinner-grow {
+      --spinner-animation-speed: 1.5s;
+   }
 }
 
 .visually-hidden {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
+   clip: rect(0 0 0 0);
+   clip-path: inset(50%);
+   height: 1px;
+   overflow: hidden;
+   position: absolute;
+   white-space: nowrap;
+   width: 1px;
 }

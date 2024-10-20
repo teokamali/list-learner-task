@@ -1,3 +1,3 @@
 .form-label {
-  @apply flex font-medium text-sm leading-[16.8px] text-main mb-2;
+   @apply flex font-medium text-sm leading-[16.8px] text-main mb-2;
 }

@@ -1,13 +1,13 @@
 .container-boxed {
-  @apply relative container 2xl:w-[calc(1536px-160px)];
+   @apply relative container 2xl:w-[calc(1536px-160px)];
 }
 
 .container-fluid {
-  @apply relative px-4 xl:px-8 mx-auto w-full;
+   @apply relative px-4 xl:px-8 mx-auto w-full;
 }
 
 @media screen and (min-width: 1686px) {
-  .container-fluid {
-    max-width: 1686px;
-  }
+   .container-fluid {
+      max-width: 1686px;
+   }
 }

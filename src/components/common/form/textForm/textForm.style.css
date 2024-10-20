@@ -1,4 +1,4 @@
 .form-text {
-  @apply absolute block text-xs mt-1 mb-0 bottom-0 z-50;
-  transform: translateY(calc(100% + 2px));
+   @apply absolute block text-xs mt-1 mb-0 bottom-0 z-50;
+   transform: translateY(calc(100% + 2px));
 }

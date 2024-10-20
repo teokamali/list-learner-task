@@ -36,6 +36,7 @@
          "recommended": true,
          "complexity": { "noBannedTypes": "off" },
          "correctness": {
+            "useExhaustiveDependencies": "off",
             "noUnusedImports": {
                "level": "error",
                "fix": "safe"

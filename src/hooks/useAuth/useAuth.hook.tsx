@@ -1,10 +1,12 @@
+import { useAppSelector } from "@/store/store";
 import { useRouter } from "next/navigation";
 import { usePermalink } from "../usePermalinks/usePermalink.hook";
-import { IAuthHookProps, IRedirectToLoginProps } from "./useAuth.types";
+import { IRedirectToLoginProps } from "./useAuth.types";
 
-const useAuth = (props: IAuthHookProps) => {
+const useAuth = () => {
    const router = useRouter();
    const { internalLinks } = usePermalink();
+   const { token } = useAppSelector((state) => state.auth);
 
    const redirectToLogin = (args: IRedirectToLoginProps) => {
       if (args.callback_url) {
@@ -12,7 +14,10 @@ const useAuth = (props: IAuthHookProps) => {
       }
       router.push(internalLinks.auth.login.slug);
    };
-   return { redirectToLogin };
+
+   const isAuthenticated = !!token; // or it can be more complicated
+
+   return { redirectToLogin, isAuthenticated };
 };
 
 export default useAuth;

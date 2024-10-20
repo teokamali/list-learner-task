@@ -3,6 +3,7 @@ import FontsProvider from "@/providers/fonts.provider";
 import "@/styles/globals.css";
 import { persistor, store } from "@/store/store";
 import "@/styles/globals.css";
+import AuthProvider from "@/providers/auth.provider";
 import type { AppPropsWithLayout } from "@/types/global.types";
 import type { ReactElement, ReactNode } from "react";
 import { Provider } from "react-redux";
@@ -18,7 +19,9 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
                loading={<span>loading...</span>}
                persistor={persistor}
             >
-               <FontsProvider>{getLayout(<Component {...pageProps} />)}</FontsProvider>
+               <AuthProvider>
+                  <FontsProvider>{getLayout(<Component {...pageProps} />)}</FontsProvider>
+               </AuthProvider>
             </PersistGate>
          </Provider>
       </>

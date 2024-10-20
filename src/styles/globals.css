@@ -7,6 +7,9 @@
 @import url("../components/common/form/label/label.style.css");
 @import url("../components/common/form/textInput/textInput.style.css");
 
+/* layouts */
+@import url("../components/layouts/main/sidebar/sidebar.styles.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

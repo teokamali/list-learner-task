@@ -2,9 +2,9 @@ import type { Nullable } from "@/types/global.types";
 
 export interface IUser {
    id: number;
-   name: Nullable<string>;
-   avatar: Nullable<string>;
-   email: Nullable<string>;
+   name: string;
+   avatar: string;
+   email: string;
 }
 
 export interface AuthStateType {

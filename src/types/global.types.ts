@@ -4,9 +4,10 @@ import type { PropsWithChildren, ReactElement, ReactNode } from "react";
 
 export type BaseProps<T = {}> = React.FC<PropsWithChildren<T>>;
 
-type NextPageWithLayout = NextPage & {
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
    layout?: (page: ReactElement) => ReactNode;
 };
+
 export type AppPropsWithLayout = AppProps & {
    Component: NextPageWithLayout;
 };

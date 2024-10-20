@@ -6,6 +6,7 @@ import storage from "redux-persist/lib/storage"; // defaults to localStorage for
 import { apiMiddleware } from "./api.middleware";
 import { APIsReducers } from "./api.reducers";
 import { authSlice } from "./slices/auth/auth.slice";
+import { modalSlice } from "./slices/modal/modal.slice";
 
 type Store = typeof store;
 export type RootState = ReturnType<Store["getState"]>;
@@ -22,6 +23,7 @@ const persistConfig = {
 // Combine your reducers
 const rootReducer = combineReducers({
    auth: authSlice.reducer,
+   modal: modalSlice.reducer,
    ...APIsReducers,
 });
 

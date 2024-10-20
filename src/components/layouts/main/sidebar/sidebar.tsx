@@ -9,7 +9,6 @@ import { sidebarRoutes } from "./sidebar.routes";
 const Sidebar = () => {
    const { user } = useAppSelector((state) => state.auth);
    const { pathname } = useRouter();
-   console.log(pathname);
    return (
       <div className="pr-1 flex flex-col gap-1 h-full">
          {/* First Part */}

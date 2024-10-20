@@ -1,5 +1,5 @@
 .form-control {
-   @apply w-full border rounded-lg bg-transparent outline-none transition-colors py-[8px] px-3 placeholder:text-main/50 focus:border-main;
+   @apply w-full border rounded-lg bg-transparent outline-none transition-colors py-[8px] px-3 placeholder:text-main/50 focus:border-main text-main;
 }
 
 .form-control:disabled {

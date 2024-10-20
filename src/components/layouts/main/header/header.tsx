@@ -62,7 +62,7 @@ const Header = () => {
                   🔥 Trend
                </Button>
             </div>
-            <FormGroup className="w-[320px]">
+            <FormGroup className="max-w-[320px]">
                <InputIcon>
                   <Input placeholder="What do you want to learn today?" />
                   <IconSearch className="text-gray-400" />

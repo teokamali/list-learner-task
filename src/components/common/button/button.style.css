@@ -3,7 +3,7 @@
 }
 
 .btn svg {
-   @apply fill-inherit flex-shrink-0;
+   @apply  flex-shrink-0;
 }
 
 /* Primary Buttons */

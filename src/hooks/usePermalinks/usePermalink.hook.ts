@@ -1,9 +1,14 @@
 export const usePermalink = () => {
    const internalLinks = {
-      home: {
+      podcasts: {
          slug: "/",
          get: () => "/",
       },
+      books: {
+         slug: "/books",
+         get: (slug: string) => `/books/${slug}`,
+      },
+
       auth: {
          login: {
             slug: "/auth/login",

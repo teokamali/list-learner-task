@@ -16,11 +16,12 @@ const config: Config = {
             // Semantic Colors
             primary: "#286DF0",
             secondary: "#286DF0", // Card
+            background: "#252526",
             info: "#475766", // Heading
             warning: "#E7AA2E",
             success: "#1AA9FD",
             danger: "#F40F46",
-            main: "#798998", // Text
+            main: "#ffffff", // Text
             //  Colors
             white: "#FEFEFE",
             dark: "#0f141a", // Default BG

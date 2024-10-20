@@ -16,7 +16,7 @@ export const AuthService = createApi({
          query: (params) => {
             const { auth } = getApiRoute(); // Use your existing function to get the route
             return {
-               url: auth.auth.path,
+               url: auth.login.path,
                method: "POST",
                sendAuthorization: false,
                data: params,

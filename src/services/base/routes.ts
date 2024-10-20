@@ -1,8 +1,8 @@
 export const getApiRoute = () => {
    const routes = {
       auth: {
-         auth: {
-            path: "auth",
+         login: {
+            path: "auth/login",
             get: function (slug: string) {
                return `/${this.path}/${slug}`;
             },

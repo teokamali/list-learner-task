@@ -11,3 +11,17 @@
 @tailwind components;
 @tailwind utilities;
 
+.text-link{
+    @apply relative;
+}
+.text-link::before {
+    @apply absolute -bottom-[3px] left-0 right-0 block w-full h-[1px] bg-primary;
+    content: '';
+  }
+  .text-link:hover {
+    @apply text-primary;
+  }
+  .text-link:hover::before {
+    @apply bg-primary;
+  }
+  

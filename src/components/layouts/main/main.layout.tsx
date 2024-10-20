@@ -1,4 +1,6 @@
+import Container from "@/components/common/container/container";
 import type { BaseProps } from "@/types/global.types";
+import Header from "./header/header";
 import Sidebar from "./sidebar/sidebar";
 
 const MainLayout: BaseProps = ({ children }) => {
@@ -10,10 +12,14 @@ const MainLayout: BaseProps = ({ children }) => {
          </aside>
 
          <div className="relative flex flex-col h-[calc(100vh)] overflow-auto w-full">
-            {/* Header */}
-            <header className="text-white rounded-lg shadow-md h-[120px] sticky top-0 left-0 right-0">Header</header>
-            {/* Main Content */}
-            <main className=" p-4 rounded-lg shadow-md">{children}</main>
+            <Container kind="boxed">
+               {/* Header */}
+               <header className="text-white rounded-lg shadow-md sticky top-0 left-0">
+                  <Header />
+               </header>
+               {/* Main Content */}
+               <main className="rounded-lg shadow-md">{children}</main>
+            </Container>
          </div>
 
          {/* Playback Detail */}

@@ -3,20 +3,12 @@ import { IconArrowRight } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-
-interface ListItem {
-   id: number;
-   image: string;
-   title: string;
-   subtitle: string;
-   slug: string;
-   category: "podcast" | "book";
-}
+import { ListItem } from "./filteredList.types";
 
 const items: ListItem[] = [
    {
       id: 1,
-      image: "https://picsum.photos/150?random=1", // replace with actual path or URL
+      image: "https://picsum.photos/150?random=1",
       title: "The Joe Rogan Experience",
       subtitle: "Joe Rogan",
       slug: "joe-rogan",
@@ -24,7 +16,7 @@ const items: ListItem[] = [
    },
    {
       id: 2,
-      image: "https://picsum.photos/150?random=2", // replace with actual path or URL
+      image: "https://picsum.photos/150?random=2",
       title: "Past Weekend",
       subtitle: "Theo Von",
       slug: "Theo-Von",
@@ -32,7 +24,7 @@ const items: ListItem[] = [
    },
    {
       id: 3,
-      image: "https://picsum.photos/150?random=3", // replace with actual path or URL
+      image: "https://picsum.photos/150?random=3",
       title: "I Am Not Your Perfect Mexican Daughter",
       subtitle: "Erika L. Sanchez",
       category: "book",
@@ -40,7 +32,7 @@ const items: ListItem[] = [
    },
    {
       id: 4,
-      image: "https://picsum.photos/150?random=4", // replace with actual path or URL
+      image: "https://picsum.photos/150?random=4",
       title: "Girl In The Blue Coat",
       subtitle: "Monica Hesse",
       category: "book",
@@ -71,7 +63,6 @@ const FilteredList: React.FC = () => {
                variant={filter === "podcast" ? "primary" : "light"}
                kind="primary"
                className={"px-3 py-2"}
-               //    className={`px-4 py-2 rounded-full ${filter === "podcast" ? "bg-blue-600 text-white" : "bg-gray-200"}`}
                onClick={() => setFilter("podcast")}
             >
                Podcast
@@ -81,7 +72,6 @@ const FilteredList: React.FC = () => {
                kind="primary"
                className={"px-3 py-2"}
                variant={filter === "book" ? "primary" : "light"}
-               //    className={`px-4 py-2 rounded-full ${filter === "book" ? "bg-blue-600 text-white" : "bg-gray-200"}`}
                onClick={() => setFilter("book")}
             >
                Books

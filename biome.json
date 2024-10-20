@@ -30,6 +30,9 @@
          "suspicious": {
             "noEmptyInterface": "off"
          },
+         "a11y": {
+            "useButtonType": "off"
+         },
          "recommended": true,
          "complexity": { "noBannedTypes": "off" },
          "correctness": {

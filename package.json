@@ -1,0 +1,39 @@
+{
+   "name": "interview-task-starterkit",
+   "version": "0.1.0",
+   "private": true,
+   "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start",
+      "lint": "next lint",
+      "format": "bunx biome format --write ./src",
+      "format:check": "bunx biome format ./src",
+      "prepare": "husky"
+   },
+   "dependencies": {
+      "react": "^18",
+      "react-dom": "^18",
+      "next": "14.2.15"
+   },
+   "devDependencies": {
+      "@biomejs/biome": "1.9.4",
+      "@types/node": "^20",
+      "@types/react": "^18",
+      "@types/react-dom": "^18",
+      "husky": "^9.1.6",
+      "lint-staged": "^15.2.10",
+      "postcss": "^8",
+      "tailwindcss": "^3.4.1",
+      "typescript": "^5"
+   },
+   "lint-staged": {
+      "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
+         "biome check --write --no-errors-on-unmatched",
+         "biome check --write --organize-imports-enabled=false --no-errors-on-unmatched",
+         "biome check --write --unsafe --no-errors-on-unmatched",
+         "biome format --write --no-errors-on-unmatched",
+         "biome lint --write --no-errors-on-unmatched"
+      ]
+   }
+}

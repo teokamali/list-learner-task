@@ -1,9 +1,9 @@
 import Container from "@/components/common/container/container";
+import Sidebar from "@/components/common/sidebar/sidebar";
 import PlaybackDrawer from "@/components/snippets/modals/playbackDrawer/playbackDrawer";
 import { useAppSelector } from "@/store/store";
 import type { BaseProps } from "@/types/global.types";
 import Header from "./header/header";
-import Sidebar from "./sidebar/sidebar";
 
 const PlaybackWidth = 340;
 

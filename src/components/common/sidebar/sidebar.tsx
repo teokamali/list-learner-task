@@ -1,9 +1,9 @@
 import { Avatar } from "@/components/common/avatar/avatar";
+import FilteredList from "@/components/layouts/main/filteredList/filteredList";
 import { useAppSelector } from "@/store/store";
 import { IconBookmark } from "@tabler/icons-react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import FilteredList from "../filteredList/filteredList";
 import { sidebarRoutes } from "./sidebar.routes";
 
 const Sidebar = () => {

@@ -8,7 +8,7 @@
 @import url("../components/common/form/textInput/textInput.style.css");
 @import url("swiper/css");
 /* layouts */
-@import url("../components/layouts/main/sidebar/sidebar.styles.css");
+@import url("../components/common/sidebar/sidebar.styles.css");
 
 @tailwind base;
 @tailwind components;

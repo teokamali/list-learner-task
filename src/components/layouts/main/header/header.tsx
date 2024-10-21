@@ -2,9 +2,9 @@ import { Button } from "@/components/common/button/button";
 import { FormGroup } from "@/components/common/form/formGroup/fromGroup";
 import { InputIcon } from "@/components/common/form/inputIcon/inputIcon";
 import { Input } from "@/components/common/form/textInput/textInput";
+import { sidebarRoutes } from "@/components/common/sidebar/sidebar.routes";
 import { IconSearch } from "@tabler/icons-react";
 import { useRouter } from "next/router";
-import { sidebarRoutes } from "../sidebar/sidebar.routes";
 
 const Header = () => {
    const { pathname } = useRouter();

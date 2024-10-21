@@ -1,6 +1,7 @@
 import { Button } from "@/components/common/button/button";
 import { triggerModal } from "@/store/slices/modal/modal.slice";
 import { useAppDispatch } from "@/store/store";
+import { formatTime } from "@/utils/fotmat.utils";
 import { truncate } from "@/utils/truncate.utils";
 import {
    IconBookmark,
@@ -27,17 +28,10 @@ const samplePodcastData: PodcastPlayerProps = {
 const PodcastPlayer = () => {
    const { chapter, currentTime, duration, imageSrc, chapterName, title } = samplePodcastData;
    const dispatch = useAppDispatch();
-   const formatTime = (time: number) => {
-      const minutes = Math.floor(time / 60);
-      const seconds = Math.floor(time % 60);
-      return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-   };
 
    return (
       <div
-         className={
-            "text-white  p-4 space-y-4 w-full h-full relative before:absolute before:inset-0 before:bg-black/60"
-         }
+         className={"text-white p-4 space-y-4 w-full h-full relative before:absolute before:inset-0 before:bg-black/60"}
          style={{
             background: `url(${imageSrc})`,
             backgroundRepeat: "no-repeat",
@@ -52,6 +46,10 @@ const PodcastPlayer = () => {
                   size="sm"
                   variant="light"
                   className="w-6 h-6 p-1 rounded-full text-[8px]"
+                  onClick={() => {
+                     dispatch(triggerModal({ modal: "playbackDrawer", trigger: false }));
+                     dispatch(triggerModal({ modal: "compactPlayer", trigger: true }));
+                  }}
                >
                   <IconChevronDown size={18} />
                </Button>

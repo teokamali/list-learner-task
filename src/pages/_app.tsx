@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import { persistor, store } from "@/store/store";
 import "@/styles/globals.css";
 import AuthProvider from "@/providers/auth.provider";
+import ModalsProvider from "@/providers/modals.provider";
 import type { AppPropsWithLayout } from "@/types/global.types";
 import type { ReactElement, ReactNode } from "react";
 import { Provider } from "react-redux";
@@ -12,6 +13,7 @@ import { PersistGate } from "redux-persist/integration/react";
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
    const defaultLayout = (page: ReactElement): ReactNode => <MainLayout>{page}</MainLayout>;
    const getLayout = Component.layout ?? defaultLayout;
+
    return (
       <>
          <Provider store={store}>
@@ -20,7 +22,11 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
                persistor={persistor}
             >
                <AuthProvider>
-                  <FontsProvider>{getLayout(<Component {...pageProps} />)}</FontsProvider>
+                  <FontsProvider>
+                     {getLayout(<Component {...pageProps} />)}
+
+                     <ModalsProvider />
+                  </FontsProvider>
                </AuthProvider>
             </PersistGate>
          </Provider>

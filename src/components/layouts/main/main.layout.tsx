@@ -5,7 +5,7 @@ import type { BaseProps } from "@/types/global.types";
 import Header from "./header/header";
 import Sidebar from "./sidebar/sidebar";
 
-const PlaybackWidth = 450;
+const PlaybackWidth = 340;
 
 const MainLayout: BaseProps = ({ children }) => {
    const { modals } = useAppSelector((state) => state.modal);

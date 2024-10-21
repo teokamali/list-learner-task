@@ -4,6 +4,7 @@ import { ITriggerModalPayload, StateType } from "./modal.types";
 const initialState: StateType = {
    modals: {
       playbackDrawer: false,
+      compactPlayer: false,
    },
 };
 

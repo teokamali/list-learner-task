@@ -1,5 +1,6 @@
 interface IModals {
    playbackDrawer: boolean;
+   compactPlayer: boolean;
 }
 
 export interface StateType {

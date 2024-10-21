@@ -41,9 +41,9 @@ const HeroCard = (props: IHeroCard) => {
                className="w-[75px] h-[75px] rounded-md"
             />
             <div className="flex-grow text-start">
-               <h2 className="font-semibold text-white text-lg">{name}</h2>
+               <h2 className="font-semibold text-white text-base">{name}</h2>
                <span className="text-xs text-main font-semibold">Episode {episode}</span>
-               <p className="text-sm font-medium text-main ">{description}</p>
+               <p className="text-sm font-medium text-main line-clamp-2">{description}</p>
             </div>
             <div>
                <IconArrowRight className="text-main" />

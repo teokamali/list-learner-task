@@ -3,7 +3,7 @@
 }
 
 .form-control-icon .form-control {
-   @apply pl-14;
+   @apply pl-10;
 }
 
 .form-control-icon .form-control-numeric {
@@ -11,6 +11,6 @@
 }
 
 .form-control-icon svg:not(.numeric-arrow) {
-   @apply absolute top-1/2 left-6;
+   @apply absolute top-1/2 left-3;
    transform: translateY(-50%);
 }

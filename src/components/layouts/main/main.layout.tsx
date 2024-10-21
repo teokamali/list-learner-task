@@ -6,7 +6,7 @@ import type { BaseProps } from "@/types/global.types";
 import { motion } from "framer-motion";
 import Header from "./header/header";
 
-const PlaybackWidth = 340;
+const PlaybackWidth = 320;
 const SIDEBAR_WIDTH = 320;
 
 const MainLayout: BaseProps = ({ children }) => {
@@ -25,37 +25,33 @@ const MainLayout: BaseProps = ({ children }) => {
          </aside>
 
          {/* Main Content Area */}
-         <div className="relative flex flex-col h-screen overflow-auto">
+         <motion.div
+            className="h-screen overflow-auto "
+            initial={false}
+            animate={{ paddingRight: modals.playbackDrawer ? `${PlaybackWidth - 20}px` : "0px" }}
+            transition={{ type: "keyframes", duration: 0.5, ease: "backOut" }}
+         >
             <Container kind="boxed">
                {/* Main Content */}
-               <div className="flex ">
-                  <div className="flex-grow ">
-                     {/* Header */}
-                     <header className="text-white rounded-lg shadow-md sticky top-0 left-0 z-20">
-                        <Header />
-                     </header>
 
-                     <main>{children}</main>
-                  </div>
-                  <motion.div
-                     initial={false}
-                     className="flex-shrink-0"
-                     animate={{ width: modals.playbackDrawer ? `${PlaybackWidth}px` : "10px" }}
-                     transition={{ type: "tween", duration: 0.2, ease: "linear" }}
-                  />
-               </div>
+               {/* Header */}
+               <header className="text-white rounded-lg shadow-md sticky top-0 left-0 z-20">
+                  <Header />
+               </header>
+
+               <main>{children}</main>
             </Container>
-         </div>
+         </motion.div>
 
          {/* Playback Drawer */}
          <motion.div
-            className={`w-[${PlaybackWidth}px] fixed  top-0 bottom-0 right-0 z-50`}
+            className={`max-w-[${PlaybackWidth}px] fixed top-0 bottom-0 right-0 z-50`}
             initial={false}
             animate={{
                x: modals.playbackDrawer ? 0 : "100%",
                opacity: modals.playbackDrawer ? 1 : 0,
             }}
-            transition={{ type: "tween", duration: 0.2, ease: "linear" }}
+            transition={{ type: "keyframes", duration: 0.5, ease: "backOut" }}
          >
             <PlaybackDrawer />
          </motion.div>

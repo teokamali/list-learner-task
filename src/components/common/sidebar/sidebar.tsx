@@ -10,9 +10,9 @@ const Sidebar = () => {
    const { user } = useAppSelector((state) => state.auth);
    const { pathname } = useRouter();
    return (
-      <div className="pr-1 flex flex-col gap-1 h-full">
+      <div className="pr-[6px] flex flex-col gap-[6px] h-full w-full">
          {/* First Part */}
-         <div className="bg-background p-1">
+         <div className="bg-background p-2">
             {user ? (
                <div className="flex items-center gap-2 py-4 px-3">
                   <Avatar
@@ -25,10 +25,8 @@ const Sidebar = () => {
             ) : (
                <></>
             )}
-            <div className="px-1 mt-1">
-               <hr className="" />
-            </div>
-            <ul className="flex flex-col gap-2 mt-2 py-2 pt-0">
+            <div className="mb-2 mx-[6px] border-b border-b-[#cecccc3b]" />
+            <ul className="flex flex-col">
                {sidebarRoutes.map((item) => {
                   const isActive = item.slug === pathname;
                   if (item.disabled) {
@@ -38,7 +36,7 @@ const Sidebar = () => {
                            className={`nav-item ${isActive ? "active-side-nav" : ""}`}
                         >
                            <div>{item.icon}</div>
-                           <span>{item.title}</span>
+                           <span className="text-base">{item.title}</span>
                         </li>
                      );
                   }
@@ -49,7 +47,7 @@ const Sidebar = () => {
                            className={`nav-item ${isActive ? "active-side-nav" : ""}`}
                         >
                            <div>{item.icon}</div>
-                           <span>{item.title}</span>
+                           <span className="text-base">{item.title}</span>
                         </Link>
                      </li>
                   );

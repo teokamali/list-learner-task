@@ -12,8 +12,13 @@ const Header = () => {
    return (
       <div className="py-4 bg-background">
          <div className="flex w-full items-center justify-between">
-            <div>
-               <h5 className="text-3xl font-bold">{currentRoute?.title}</h5>
+            <div className="flex items-center gap-1">
+               <div className="flex flex-col gap-1">
+                  <div className="w-1 h-1 bg-secondary" />
+                  <div className="w-1 h-1 bg-secondary" />
+                  <div className="w-1 h-1 bg-secondary" />
+               </div>
+               <h5 className="text-xl font-semibold">{currentRoute?.title}</h5>
             </div>
             <div className="flex items-center gap-3">
                <Button

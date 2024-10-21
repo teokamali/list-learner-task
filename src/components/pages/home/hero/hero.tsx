@@ -44,7 +44,7 @@ const Hero = () => {
       },
    ];
    return (
-      <div className="grid grid-cols-2 grid-rows-2 gap-1">
+      <div className="grid grid-cols-2 grid-rows-1 gap-4">
          {cards.map((card) => {
             return (
                <HeroCard

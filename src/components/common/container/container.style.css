@@ -1,5 +1,5 @@
 .container-boxed {
-   @apply relative container 2xl:w-[calc(1536px-160px)];
+   @apply relative container 2xl:w-[calc(1536px-160px)] px-8;
 }
 
 .container-fluid {

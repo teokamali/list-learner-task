@@ -3,44 +3,62 @@ import Sidebar from "@/components/common/sidebar/sidebar";
 import PlaybackDrawer from "@/components/snippets/modals/playbackDrawer/playbackDrawer";
 import { useAppSelector } from "@/store/store";
 import type { BaseProps } from "@/types/global.types";
+import { motion } from "framer-motion";
 import Header from "./header/header";
 
 const PlaybackWidth = 340;
+const SIDEBAR_WIDTH = 320;
 
 const MainLayout: BaseProps = ({ children }) => {
    const { modals } = useAppSelector((state) => state.modal);
+
    return (
       <div className="bg-background flex h-screen">
          {/* Sidebar */}
-         <aside className="text-white bg-black w-[23%]">
+         <aside
+            className={"text-white bg-[#181818] flex-shrink-0"}
+            style={{
+               width: `${SIDEBAR_WIDTH}px`,
+            }}
+         >
             <Sidebar />
          </aside>
 
-         <div
-            className={`relative flex flex-col h-screen overflow-auto w-full pr-4 ${modals.playbackDrawer ? `pr-[${PlaybackWidth.toString()}px]` : ""}`}
-            style={{
-               paddingRight: modals.playbackDrawer ? `${PlaybackWidth}px` : "0px",
-            }}
-         >
+         {/* Main Content Area */}
+         <div className="relative flex flex-col h-screen overflow-auto">
             <Container kind="boxed">
-               {/* Header */}
-               <header className="text-white rounded-lg shadow-md sticky top-0 left-0 z-20">
-                  <Header />
-               </header>
                {/* Main Content */}
-               <main className="rounded-lg ">{children}</main>
+               <div className="flex ">
+                  <div className="flex-grow ">
+                     {/* Header */}
+                     <header className="text-white rounded-lg shadow-md sticky top-0 left-0 z-20">
+                        <Header />
+                     </header>
+
+                     <main>{children}</main>
+                  </div>
+                  <motion.div
+                     initial={false}
+                     className="flex-shrink-0"
+                     animate={{ width: modals.playbackDrawer ? `${PlaybackWidth}px` : "10px" }}
+                     transition={{ type: "tween", duration: 0.2, ease: "linear" }}
+                  />
+               </div>
             </Container>
          </div>
 
-         {/* Playback Detail */}
-         <div
-            className={` w-[${PlaybackWidth}px]  fixed top-0 bottom-0 right-0 transition-transform duration-300`}
-            style={{
-               transform: `translateX(${modals.playbackDrawer ? "0" : "100"}%)`,
+         {/* Playback Drawer */}
+         <motion.div
+            className={`w-[${PlaybackWidth}px] fixed  top-0 bottom-0 right-0 z-50`}
+            initial={false}
+            animate={{
+               x: modals.playbackDrawer ? 0 : "100%",
+               opacity: modals.playbackDrawer ? 1 : 0,
             }}
+            transition={{ type: "tween", duration: 0.2, ease: "linear" }}
          >
             <PlaybackDrawer />
-         </div>
+         </motion.div>
       </div>
    );
 };

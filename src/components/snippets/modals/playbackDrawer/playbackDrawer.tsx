@@ -31,7 +31,9 @@ const PodcastPlayer = () => {
 
    return (
       <div
-         className={"text-white p-4 space-y-4 w-full h-full relative before:absolute before:inset-0 before:bg-black/60"}
+         className={
+            "text-white p-4 space-y-4 w-full h-full relative z-50 before:absolute before:inset-0 before:bg-black/60"
+         }
          style={{
             background: `url(${imageSrc})`,
             backgroundRepeat: "no-repeat",

@@ -24,17 +24,17 @@ const MainLayout: BaseProps = ({ children }) => {
          >
             <Container kind="boxed">
                {/* Header */}
-               <header className="text-white rounded-lg shadow-md sticky top-0 left-0">
+               <header className="text-white rounded-lg shadow-md sticky top-0 left-0 z-20">
                   <Header />
                </header>
                {/* Main Content */}
-               <main className="rounded-lg shadow-md">{children}</main>
+               <main className="rounded-lg ">{children}</main>
             </Container>
          </div>
 
          {/* Playback Detail */}
          <div
-            className={`shadow-md w-[${PlaybackWidth}px]  fixed top-0 bottom-0 right-0 transition-transform duration-300`}
+            className={` w-[${PlaybackWidth}px]  fixed top-0 bottom-0 right-0 transition-transform duration-300`}
             style={{
                transform: `translateX(${modals.playbackDrawer ? "0" : "100"}%)`,
             }}

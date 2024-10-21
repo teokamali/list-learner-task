@@ -6,6 +6,7 @@ const nextConfig = {
 
       remotePatterns: [{ hostname: "dummyjson.com" }, { hostname: "picsum.photos" }],
    },
+   compress: true,
    env: {
       BASE_URL: process.env.BASE_URL,
    },

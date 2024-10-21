@@ -6,7 +6,7 @@
 @import url("../components/common/form/inputIcon/inputIcon.style.css");
 @import url("../components/common/form/label/label.style.css");
 @import url("../components/common/form/textInput/textInput.style.css");
-
+@import url("swiper/css");
 /* layouts */
 @import url("../components/layouts/main/sidebar/sidebar.styles.css");
 

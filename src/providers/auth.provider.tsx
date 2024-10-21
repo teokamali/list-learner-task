@@ -1,13 +1,13 @@
 import useAuth from "@/hooks/useAuth/useAuth.hook";
 import { BaseProps } from "@/types/global.types";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 
 const AuthProvider: BaseProps = ({ children }) => {
    const { isAuthenticated, redirectToLogin } = useAuth();
    const { pathname } = useRouter();
 
-   useEffect(() => {
+   useLayoutEffect(() => {
       if (!isAuthenticated) {
          redirectToLogin({ callback_url: pathname });
       }

@@ -10,11 +10,11 @@ const HeroCard = (props: IHeroCard) => {
    const dispatch = useAppDispatch();
 
    return (
-      <button
+      <div
          onClick={() => {
             dispatch(triggerModal({ modal: "playbackDrawer", trigger: true }));
          }}
-         className={"p-3 rounded-md hover:opacity-60 cursor-pointer transition-all duration-200"}
+         className={"p-3 rounded-md hover:opacity-60 cursor-pointer transition-all duration-200 relative z-10"}
          style={{
             background: `linear-gradient(90deg, ${color} 0%, rgba(255,255,255,0) 100%)`,
          }}
@@ -36,7 +36,7 @@ const HeroCard = (props: IHeroCard) => {
                <IconArrowRight className="text-main" />
             </div>
          </div>
-      </button>
+      </div>
    );
 };
 
